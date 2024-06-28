@@ -1,28 +1,18 @@
 appProjects:
-  - name: spring-apps
+  - name: springs
     description: 'Spring Applications Project'
     sourceRepos:
     - '*'
     namespaces: 
     - spring-apps-dev 
     managerGroups:
-    - mahdi
+    - claire
     syncOnlyGroups:
     readOnlyGroups:
     - guest
 
 applications:
-  - name: bluegreen
-    namespace: rollouts
-    project: default
-    repoURL: https://github.com/argoproj/rollouts-demo.git
-    targetRevision: HEAD
-    path: examples/blue-green
-    syncOptions:
-      - CreateNamespace=true 
-    selfHeal: true
-    prune: true
-  - name: helmargo
+  - name: helmargo2
     namespace: spring-apps-dev
     labels:
       type: helm
@@ -47,7 +37,7 @@ applications:
       - CreateNamespace=true 
     selfHeal: true
     prune: true
-  - name: demoargo
+  - name: demoargo2
     namespace: spring-apps-dev
     project: default
     repoURL: https://github.com/mkonzali/DemoManifests.git
